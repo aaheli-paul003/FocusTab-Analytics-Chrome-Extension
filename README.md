@@ -9,7 +9,7 @@
 The goal of this project was to combine **software engineering** with **data analytics concepts** by logging structured behavioral data and transforming it into meaningful insights. The extension was designed to be lightweight, persistent, and analytics-ready.
 
 ---
-->
+
 ## Features:
 ### Focus Sessions
 * Start and stop focus sessions from the extension popup
