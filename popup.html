@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FocusTab</title>
+
+<style>
+:root {
+  --bg: #0f172a;
+  --card: #020617;
+  --text: #e5e7eb;
+  --accent: #2563eb;
+}
+
+.light {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --accent: #16a34a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  margin: 0;
+}
+
+.container {
+  width: 300px;
+  padding: 12px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.timer-ring {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+  border: 6px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,99,235,.6); }
+  70% { box-shadow: 0 0 0 10px rgba(37,99,235,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+}
+
+button {
+  width: 100%;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 4px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#tasks li {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between checkbox and text */
+  padding: 4px 0;
+}
+
+#tasks li input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0; /* remove any default spacing */
+}
+
+#blockedList li {
+  display: flex;
+  justify-content: space-between; /* domain left, button right */
+  align-items: center;
+  padding: 4px 0;
+}
+
+#blockedList li button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#blockedList li button:hover {
+  color: darkred;
+}
+
+#popupControls button {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#themeToggleBtn {
+  background-color: #eee;
+}
+
+#analyticsBtn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#popupControls button:hover {
+  opacity: 0.8;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>FocusTab</h1>
+
+  <div class="card">
+    <div class="timer-ring" id="ring">
+      <div class="timer" id="timer">00:00</div>
+    </div>
+    <div id="status" style="text-align:center">Not focusing</div>
+    <button id="toggleBtn">Start Focus</button>
+  </div>
+
+  <div class="card">
+    <h3>Tasks</h3>
+    <input id="taskInput" placeholder="New task">
+    <button id="addTaskBtn">Add</button>
+    <ul id="tasks"></ul>
+  </div>
+
+  <div class="card">
+    <h3>Blocked Sites</h3>
+    <input id="blockInput" placeholder="example.com">
+    <button id="addBlockBtn">Add</button>
+    <ul id="blockedList"></ul>
+  </div>
+
+  <div id="popupControls" style="display: flex; justify-content: space-between; margin-top: 10px;">
+    <button id="themeBtn">Toggle ☀️/🌙</button>
+    <button id="analyticsBtn">View Analytics</button>
+  </div>
+
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

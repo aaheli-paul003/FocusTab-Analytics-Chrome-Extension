@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Focus Analytics</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 10px;
+      max-width: 300px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    #totalMinutes {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h2>Focus Analytics</h2>
+  <div id="totalMinutes">Total focus minutes: 0</div>
+  <div id="avgDuration" class="stat">Average session duration: 0</div>
+  <canvas id="focusTrendChart"></canvas>
+  <canvas id="tasksPieChart"></canvas>
+  <canvas id="blockedPieChart"></canvas>
+
+  <script src="libs/chart.min.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>

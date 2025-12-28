@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "FocusTab Analytics (ver_05)",
+  "description": "Focus timer with tasks, site blocking, and analytics.",
+  "version": "0.5.1",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FocusTab Analytics"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "downloads",
+    "tabs",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "options_page": "options.html"
+}
